@@ -1,0 +1,9 @@
+n = int(input('Количество участников: '))
+students = []
+for i in range(n):
+    students.append(input().split())
+count = 0
+for x in students:
+    if x[3] == 'True': count += 1
+
+print(f'Очно: {count}; Заочно: {len(students) - count}')
