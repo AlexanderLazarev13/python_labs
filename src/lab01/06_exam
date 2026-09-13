@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 n = int(input('Количество участников: '))
 students = []
 for i in range(n):
@@ -6,4 +7,14 @@ count = 0
 for x in students:
     if x[3] == 'True': count += 1
 
+=======
+n = int(input('Количество участников: '))
+students = []
+for i in range(n):
+    students.append(input().split())
+count = 0
+for x in students:
+    if x[3] == 'True': count += 1
+
+>>>>>>> 7efbb1b5486df470172fa4c0f870f77a4f12340a
 print(f'Очно: {count}; Заочно: {len(students) - count}')
