@@ -1,7 +1,8 @@
-price, discount, vat = list(map(int, input().split()))
+price, discount, vat = list(map(int, input('Введите цену, скидку, налог через пробел: ').split()))
 base = price * (1 - (discount/100))
 vat_amount = base * vat / 100
 total = base + vat_amount
+
 print(f'База послк скидки: {base:.2f} ₽')
 print(f'НДС: {vat_amount:.2f} ₽')
 print(f'Итого к оплате: {total:.2f} ₽')
