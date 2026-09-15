@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 num1 = float(input('a: ').replace(',', '.'))
 num2 = float(input('b: ').replace(',', '.'))
 
 print(f'sum={num1+num2:.2f}; avg={(num1+num2)/2:.2f}')
-=======
-num1 = input('a: ')
-num2 = input('b: ')
-num1, num2 = float(num1.replace(',', '.')), float(num2.replace(',', '.'))
-print(f'sum={round(num1+num2, 2)}; avg={round((num1+num2)/2, 2)}')
->>>>>>> 7efbb1b5486df470172fa4c0f870f77a4f12340a
+
