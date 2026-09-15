@@ -13,22 +13,24 @@
 
 ## Задание 3
 Подсчёт итоговой суммы, НДС, и базы после скидки. Вывод с по строкам и с двумя знаками после запятой. 
-<img width="589" height="147" alt="03_discount_vat" src="https://github.com/user-attachments/assets/c52949d1-cc1e-4332-8157-3cab62483013" />
+<img width="619" height="146" alt="image" src="https://github.com/user-attachments/assets/9ae31fe8-958e-4b6b-84fa-eb75fa0fe0a1" />
 
 
 ## Задание 4
 Перевод минут в формат часы:минуты.
-<img width="605" height="104" alt="04_minutes_to_hhmm" src="https://github.com/user-attachments/assets/dcf1cc88-0941-436b-a8a6-281826fe1668" />
+<img width="597" height="101" alt="image" src="https://github.com/user-attachments/assets/488cd43e-2233-4de3-bd19-ae2b05dd9584" />
+
 
 
 ## Задание 5
 Поиск и вывод инициалов введённого ФИО, подсчёт символов ФИО с двумя пробелами.
-<img width="609" height="124" alt="05_initials_and_len" src="https://github.com/user-attachments/assets/6962e866-a875-4a30-8a12-b1fcd5a85fd6" />
+<img width="602" height="120" alt="image" src="https://github.com/user-attachments/assets/dcbe43b7-12ed-4109-8a7b-51e18679b3c7" />
+
 
 
 ## Задание 6
 Обработка заданного n числа студентов, проверка на наличие True или False в данных, подсчёт каждого типа.
-<img width="600" height="231" alt="06_exam" src="https://github.com/user-attachments/assets/e750c5d0-1635-4e04-b429-b3ff386e3dd1" />
+<img width="588" height="177" alt="image" src="https://github.com/user-attachments/assets/4ce8aa18-f629-4844-8375-2ee33249e45d" />
 
 
 ## Задание 7
