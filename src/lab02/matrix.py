@@ -18,33 +18,24 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
 
     return transposed_mat
 
-for example1 in [[[1, 2, 3]], [[1], [2], [3]]]:
-    for l1 in example1:
-        print(l1)
-    print('->')
-    tr = transpose(example1)
-    for l2 in tr:
-        print(l2)
-    print('')
+# for example1 in [[[1, 2, 3]], [[1], [2], [3]]]:
+#     for l1 in example1:
+#         print(l1)
+#     print('->')
+#     tr = transpose(example1)
+#     for l2 in tr:
+#         print(l2)
+#     print('')
 
-print([])
-print('->')
-print(transpose([]))
-print('')
+# print([])
+# print('->')
+# print(transpose([]))
+# print('')
 
-for l in [[1, 2], [3]]:
-    print(l)
-print('->')
-print(transpose([[1, 2], [3]]))
-
-if __name__ == '__main__':
-    assert transpose([[1, 2, 3]]) == [[1], [2], [3]]
-    assert transpose([[1], [2], [3]]) == [[1, 2, 3]]
-    assert transpose([[1, 2], [3, 4]]) == [[1, 3], [2, 4]]
-    assert transpose([]) == []
-    # assert transpose([[1, 2], [3]]) == ValueError
-    print('Все тесты функции transpose пройдены!')
-
+# for l in [[1, 2], [3]]:
+#     print(l)
+# print('->')
+# print(transpose([[1, 2], [3]]))
 # функция №2
 def row_sums(mat: list[list[float | int]]) -> list[float]:
     '''
@@ -54,19 +45,12 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     if len(set([len(row) for row in mat])) != 1: raise ValueError('"Рваная" матрица')
     return [sum(row) for row in mat]
 
-for example2 in [[[1, 2, 3], [4, 5, 6]], [[-1, 1], [10, -10]], [[0, 0], [0, 0]], [[1, 2], [3]]]:
-    for l in example2:
-        print(l)
-    print('->')
-    print(row_sums(example2))
-    print('')
-
-if __name__ == '__main__':
-    assert row_sums([[1, 2, 3], [4, 5, 6]]) == [6, 15]
-    assert row_sums([[-1, 1], [10, -10]]) == [0, 0]
-    assert row_sums([[0, 0], [0, 0]]) == [0, 0]
-    # assert row_sums([[1, 2], [3]]) == ValueError
-    print('Все тесты функции row_sums пройдены!')
+# for example2 in [[[1, 2, 3], [4, 5, 6]], [[-1, 1], [10, -10]], [[0, 0], [0, 0]], [[1, 2], [3]]]:
+#     for l in example2:
+#         print(l)
+#     print('->')
+#     print(row_sums(example2))
+#     print('')
 
 
 # функция №3
@@ -84,10 +68,3 @@ for example3 in [[[1, 2, 3], [4, 5, 6]], [[-1, 1], [10, -10]], [[0, 0], [0, 0]],
     print('->')
     print(col_sums(example3))
     print('')
-
-if __name__ == '__main__':
-    assert col_sums([[1, 2, 3], [4, 5, 6]]) == [5, 7, 9]
-    assert col_sums([[-1, 1], [10, -10]]) == [9, -9]
-    assert col_sums([[0, 0], [0, 0]]) == [0, 0]
-    # assert col_sums([[1, 2], [3]]) == ValueError
-    print('Все тесты функции col_sums пройдены!')

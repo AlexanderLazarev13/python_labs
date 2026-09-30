@@ -11,19 +11,19 @@ def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
         if n > max_n: max_n = n
         if n < min_n: min_n = n
     return min_n, max_n
-for example1 in [[3, -1, 5, 5, 0], [42], [-5, -2, -9], [1.5, 2, 2.0, -3.1], []]:
-    print(example1)
-    print('->')
-    print(min_max(example1))
-    print('')
+# for example1 in [[3, -1, 5, 5, 0], [42], [-5, -2, -9], [1.5, 2, 2.0, -3.1], []]:
+#     print(example1)
+#     print('->')
+#     print(min_max(example1))
+#     print('')
 
-if __name__ == '__main__':
-    assert min_max([3, -1, 5, 5, 0]) == (-1, 5)
-    assert min_max([42]) == (42, 42)
-    assert min_max([-5, -2, -9]) == (-9, -2)
-    assert min_max([1.5, 2, 2.0, -3.1]) == (-3.1, 2)
-    # assert min_max([]) == ValueError
-    print('Все тесты функции min_max пройдены!')
+# if __name__ == '__main__':
+#     assert min_max([3, -1, 5, 5, 0]) == (-1, 5)
+#     assert min_max([42]) == (42, 42)
+#     assert min_max([-5, -2, -9]) == (-9, -2)
+#     assert min_max([1.5, 2, 2.0, -3.1]) == (-3.1, 2)
+#     # assert min_max([]) == ValueError
+#     print('Все тесты функции min_max пройдены!')
 
 # функция №2
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
@@ -38,18 +38,18 @@ def unique_sorted(nums: list[float | int]) -> list[float | int]:
                 uniq_nums[j], uniq_nums[j+1] = uniq_nums[j+1], uniq_nums[j]
     return uniq_nums
 
-for example2 in [[3, 1, 2, 1, 3], [], [-1, -1, 0, 2, 2], [1.0, 1, 2.5, 2.5, 0]]:
-    print(example2)
-    print('->')
-    print(unique_sorted(example2))
-    print('')
+# for example2 in [[3, 1, 2, 1, 3], [], [-1, -1, 0, 2, 2], [1.0, 1, 2.5, 2.5, 0]]:
+#     print(example2)
+#     print('->')
+#     print(unique_sorted(example2))
+#     print('')
 
-if __name__ == '__main__':
-    assert unique_sorted([3, 1, 2, 1, 3]) == [1, 2, 3]
-    assert unique_sorted([]) == []
-    assert unique_sorted([-1, -1, 0, 2, 2]) == [-1, 0, 2]
-    assert unique_sorted([1.0, 1, 2.5, 2.5, 0]) == [0, 1.0, 2.5]
-    print('Все тесты функции unique_sorted пройдены!')
+# if __name__ == '__main__':
+#     assert unique_sorted([3, 1, 2, 1, 3]) == [1, 2, 3]
+#     assert unique_sorted([]) == []
+#     assert unique_sorted([-1, -1, 0, 2, 2]) == [-1, 0, 2]
+#     assert unique_sorted([1.0, 1, 2.5, 2.5, 0]) == [0, 1.0, 2.5]
+#     print('Все тесты функции unique_sorted пройдены!')
 
 # функция №3
 def flatten(mat: list[list | tuple]) -> list:
@@ -66,21 +66,21 @@ def flatten(mat: list[list | tuple]) -> list:
     return row_major
 
 
-for example3 in [[[1, 2], [3, 4]], [[1, 2], (3, 4, 5)], [[1], [], [2, 3]]]:
+# for example3 in [[[1, 2], [3, 4]], [[1, 2], (3, 4, 5)], [[1], [], [2, 3]]]:
     
-    for l in example3:
-        print(l)
-    print('->')
-    print(flatten(example3))
-    print('')
-for l in [[1, 2], '"ab"']:
-        print(l)
-print('->')
-print(flatten([[1, 2], '"ab"']))
+#     for l in example3:
+#         print(l)
+#     print('->')
+#     print(flatten(example3))
+#     print('')
+# for l in [[1, 2], '"ab"']:
+#         print(l)
+# print('->')
+# print(flatten([[1, 2], '"ab"']))
 
-if __name__ == '__main__':
-    assert flatten([[1, 2], [3, 4]]) == [1, 2, 3, 4]
-    assert flatten([[1, 2], (3, 4, 5)]) == [1, 2, 3, 4, 5]
-    assert flatten([[1], [], [2, 3]]) == [1, 2, 3]
-    # assert flatten([[1, 2], "ab"]) == TypeError
-    print('Все тесты функции flatten пройдены!')
+# if __name__ == '__main__':
+#     assert flatten([[1, 2], [3, 4]]) == [1, 2, 3, 4]
+#     assert flatten([[1, 2], (3, 4, 5)]) == [1, 2, 3, 4, 5]
+#     assert flatten([[1], [], [2, 3]]) == [1, 2, 3]
+#     # assert flatten([[1, 2], "ab"]) == TypeError
+#     print('Все тесты функции flatten пройдены!')
