@@ -65,7 +65,8 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     Если длины всех строк матриц не равны, будет возврашено ValueError.
     '''
     if len(set([len(row) for row in mat])) != 1: raise ValueError('"Рваная" матрица')
-    return [sum(row) for row in mat]
+    mat_f = mat.copy()
+    return [sum(row) for row in mat_f]
 
 
 def col_sums(mat: list[list[float | int]]) -> list[float]:
@@ -74,7 +75,8 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     Если длины всех строк матриц не равны, будет возврашено ValueError.
     '''
     if len(set([len(row) for row in mat])) != 1: raise ValueError('"Рваная" матрица')
-    return [sum([row[i] for row in mat]) for i in range(len(mat[0]))]
+    mat_f = mat.copy()
+    return [sum([row[i] for row in mat_f]) for i in range(len(mat_f[0]))]
 
 
 def format_record(rec: tuple[str, str, float]) -> str:
@@ -95,10 +97,12 @@ def format_record(rec: tuple[str, str, float]) -> str:
     неверное количество элементов, gpa не удовлетворяет диапазону от 0 до 5
     
     будет возвращено ValueError.
-    '''
+    '''    
     if rec[0].strip() == '' or rec[1].strip() == '' or (not (type(rec[2]) is float)) or \
+        (not (type(rec[0]) is str)) or (not (type(rec[1]) is str)) or \
         (not (0 <= rec[2] <= 5.00)) or (not (type(rec) is tuple)) or len(rec) != 3: 
         raise ValueError('Данные некоректны')
-    initials = rec[0].strip().split()[0].capitalize() + ' ' + \
-        ''.join([x[0].upper() + '.'  for x in rec[0].strip().split()[1:]]) 
-    return f'{initials}, гр. {rec[1]}, GPA {rec[2]:.2f}'
+    data = rec.copy()
+    initials = data[0].strip().split()[0].capitalize() + ' ' + \
+        ''.join([x[0].upper() + '.'  for x in data[0].strip().split()[1:]]) 
+    return f'{initials}, гр. {data[1]}, GPA {data[2]:.2f}'

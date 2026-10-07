@@ -26,7 +26,8 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     Если длины всех строк матриц не равны, будет возврашено ValueError.
     '''
     if len(set([len(row) for row in mat])) != 1: raise ValueError('"Рваная" матрица')
-    return [sum(row) for row in mat]
+    mat_f = mat.copy()
+    return [sum(row) for row in mat_f]
 
 
 # функция №3
@@ -36,7 +37,8 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     Если длины всех строк матриц не равны, будет возврашено ValueError.
     '''
     if len(set([len(row) for row in mat])) != 1: raise ValueError('"Рваная" матрица')
-    return [sum([row[i] for row in mat]) for i in range(len(mat[0]))]
+    mat_f = mat.copy()
+    return [sum([row[i] for row in mat_f]) for i in range(len(mat_f[0]))]
 
 
 # for example1 in [[[1, 2, 3]], [[1], [2], [3]]]:
