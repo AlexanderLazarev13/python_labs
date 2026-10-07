@@ -82,12 +82,8 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
 ```python
 import sys
-import os
+from src.lib.text import normalize, tokenize, count_freq, top_n
 
-src_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, src_path)
-
-from lib.text import *
 text = sys.stdin.read()
 if text.strip() == '':
     raise ValueError('Невозможно преобразовать пустую строку')
