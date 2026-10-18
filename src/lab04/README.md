@@ -74,9 +74,9 @@ write_csv([("word","count"),("test",3)], "data/check.csv")
 ```
 
 ### Терминал:
-![Пример](../../images/lab04/img01.png)
+![](../../images/lab04/img01.png)
 ### data/check.csv с написанным CSV:
-![Пример](../../images/lab04/report01.png)
+![](../../images/lab04/report01.png)
 
 ## Задание B
 ## Был реализован скрипт text_report для создания общего отчёта по файлу(ам), состоящим из пар "слово - частота", и в дополнение отчёт в формате "файл - слово - частота" для нескольких файлов. Если файл не существует - FileNotFoundError; если файл пуст - отчёт содержит только заголовок "word,count".
@@ -126,29 +126,29 @@ def report_per_file(files: list[str], res_file: str, encoding: str='utf-8') -> N
 ### Тест-кейсы:
 #### A. Один файл
 #### data/input.txt: "Привет, мир! Привет!!!"
-![Пример](../../images/lab04/img02.png)
+![](../../images/lab04/img02.png)
 
 #### отчёт data/report.csv:
-![Пример](../../images/lab04/report02.png)
+![](../../images/lab04/report02.png)
 
 #### B. Пустой файл
 #### data/input.txt: пустой файл
-![Пример](../../images/lab04/img03.png)
+![](../../images/lab04/img03.png)
 
 #### отчёт data/report.csv:
-![Пример](../../images/lab04/report03.png)
+![](../../images/lab04/report03.png)
 
 #### C. Кодировка cp1251
 #### data/input.txt: "Привет" в кодировке cp1251
-![Пример](../../images/lab04/img04.png)
+![](../../images/lab04/img04.png)
 
 #### отчёт data/report.csv:
-![Пример](../../images/lab04/report04.png)
+![](../../images/lab04/report04.png)
 
 #### D★. Несколько файлов
 #### data/a.txt: "Привет мир", data/b.txt: "Привет, привет!"
-![Пример](../../images/lab04/img05.png)
+![](../../images/lab04/img05.png)
 
 #### отчёт data/report_total.csv и data/report_per_file.csv:
-![Пример](../../images/lab04/report05-1.png)
-![Пример](../../images/lab04/report05-2.png)
+![](../../images/lab04/report05-1.png)
+![](../../images/lab04/report05-2.png)
