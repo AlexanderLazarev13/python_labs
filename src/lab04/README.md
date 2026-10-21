@@ -94,7 +94,7 @@ def report_total(files: str, res_file: str, encoding: str='utf-8'):
         text = read_text(f, encoding=encoding)
         words = tokenize(normalize(text))
         all_words.extend(words)
-    lines = Counter(all_words).items()
+    lines = sorted_word_counts(Counter(all_words).items())
     write_csv(lines, res_file, header=('word', 'count'))
 ```
 
