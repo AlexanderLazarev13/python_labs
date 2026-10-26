@@ -4,6 +4,10 @@ import csv
 from src.lab04.io_to_txt import ensure_parent_dir
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
+    import json
+    from pathlib import Path
+    import csv
+    from src.lab04.io_to_txt import ensure_parent_dir
     '''
     Преобразует JSON-файл в CSV.
     Поддерживает список словарей [{...}, {...}], заполняет отсутствующие поля пустыми строками.
@@ -26,7 +30,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             csv_file = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
             csv_file.writeheader()
             csv_file.writerows(json_file)
-    except FileExistsError:
+    except FileNotFoundError:
         raise FileNotFoundError('Файл не найден.')
     except UnicodeDecodeError:
         raise ValueError('Кодировка не соответствует "utf-8".')
@@ -34,6 +38,10 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         raise ValueError('Невозможно обработать не .json файл')
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
+    import json
+    from pathlib import Path
+    import csv
+    from src.lab04.io_to_txt import ensure_parent_dir
     '''
     Преобразует CSV в JSON (список словарей) c заголовком.
     '''
@@ -51,28 +59,28 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         ensure_parent_dir(json_path)
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(csv_file, f, ensure_ascii=False, indent=2)
-    except FileExistsError:
+    except FileNotFoundError:
         raise FileNotFoundError('Файл не найден.')
     except UnicodeDecodeError:
         raise ValueError('Кодировка не соответствует "utf-8".')
-    # except csv.Error:
-    #     raise ValueError('Невозможно обработать не .csv файл.')
+    except csv.Error:
+        raise ValueError('Невозможно обработать не .csv файл.')
 
 if __name__ == '__main__':
-    json_to_csv('data/samples/people.json', 'data/out/people.csv')
-    csv_to_json('data/samples/people_csv.csv', 'data/out/people.json')
+    json_to_csv('data/samples/people.json', 'data/out/people_from_json.csv')
+    csv_to_json('data/samples/people.csv', 'data/out/people_from_csv.json')
 
     with open('data/samples/people.json', 'r', encoding='utf-8') as f:
         len_json_file = len(json.load(f))
-    with open('data/out/people.csv', newline='', encoding='utf-8') as f:
-        len_csv_res = list(csv.DictReader(f))
+    with open('data/out/people_from_json.csv', newline='', encoding='utf-8') as f:
+        len_csv_res = len(list(csv.DictReader(f)))
 
     with open('data/samples/people.csv', newline='', encoding='utf-8') as f:
-        len_csv_file = list(csv.DictReader(f))
-    with open('data/out/people.json', 'r', encoding='utf-8') as f:
+        len_csv_file = len(list(csv.DictReader(f)))
+    with open('data/out/people_from_csv.json', 'r', encoding='utf-8') as f:
         len_json_res = len(json.load(f))
 
     assert len_json_file == len_csv_res
-    print(f'Тест конвертации JSON -> CSV пройден, .json = {len_json_file} записи; .csv = {len_csv_res} строки')
+    print(f'Тест конвертации JSON -> CSV пройден, .json = {len_json_file} записей(и); .csv = {len_csv_res} строк(и)')
     assert len_csv_file == len_json_res
-    print(f'Тест конвертации CSV -> JSON пройден, .csv = {len_csv_file} строки; .json = {len_json_res} записи')
+    print(f'Тест конвертации CSV -> JSON пройден, .csv = {len_csv_file} строк(и); .json = {len_json_res} записей(и)')
