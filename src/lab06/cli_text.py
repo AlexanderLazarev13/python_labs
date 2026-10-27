@@ -22,7 +22,7 @@ def main():
     args = parser.parse_args()
 
     if args.command == "cat":
-        lines = read_text(args.input).split()
+        lines = read_text(args.input).splitlines()
         if args.n:
             for i in range(1, len(lines) + 1):
                 print(f'{i}. {lines[i - 1]}')

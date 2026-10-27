@@ -67,7 +67,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         raise ValueError('Невозможно обработать не .csv файл.')
 
 if __name__ == '__main__':
-    json_to_csv('data/samples/people.json', 'data/out/people_from_json.csv')
+    # json_to_csv('data/samples/people.json', 'data/out/people_from_json.csv')
     csv_to_json('data/samples/people.csv', 'data/out/people_from_csv.json')
 
     with open('data/samples/people.json', 'r', encoding='utf-8') as f:

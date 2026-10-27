@@ -15,7 +15,7 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     Пример: read_text(data.txt, encoding="cp1251")
     '''
     p = Path(path)
-    return ' '.join(p.read_text(encoding=encoding).split())
+    return p.read_text(encoding=encoding)
 
 
 def write_csv(rows: Iterable[Sequence], path: str | Path, 
