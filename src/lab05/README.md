@@ -59,7 +59,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
     '''
     try:
         with open(csv_path, newline='', encoding='utf-8') as f:
-            sample = f.read(2048)
+            sample = f.read()
             sniffer = csv.Sniffer()
             dialect = sniffer.sniff(sample)
             f.seek(0)
