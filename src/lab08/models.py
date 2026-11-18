@@ -42,6 +42,7 @@ def student_age(rec: dict, today=None) -> int:
     validate_student(rec)
     b = date.fromisoformat(rec["birthdate"])
     if today != None:
+        if type(today) != str: raise ValueError('Дата должна быть передана строкой')
         today_date = date.fromisoformat(today)
     else:
         today_date = date.today()
