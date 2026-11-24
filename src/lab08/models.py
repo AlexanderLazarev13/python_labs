@@ -47,8 +47,8 @@ def student_age(rec: dict, today=None) -> int:
     else:
         today_date = date.today()
     if today_date < b: raise ValueError('Невозможно вычислить возраст на дату раньше даты рождения')
-    if today_date.month > b.month: return today_date.year - b.year - 1
-    if today_date.month == b.month and today_date.day > b.day: return today_date.year - b.year - 1
+    if today_date.month < b.month: return today_date.year - b.year - 1
+    if today_date.month == b.month and today_date.day < b.day: return today_date.year - b.year - 1
     return today_date.year - b.year
 
 def student_to_dict(rec: dict) -> dict:
@@ -91,10 +91,3 @@ def update_student(rec: dict, **fields) -> dict:
         except ValueError as e:
             raise ValueError(f'Ошибка в значении параметра "{k2}": {e}')
     return new_rec
-
-def main():
-    s = make_student("hgfd hgfd hgfd", "2006-01-01","hgfd-65432", 4.5 )
-    print(student_age(s, '2020-01-01'))
-
-if __name__ == '__main__':
-    main()
